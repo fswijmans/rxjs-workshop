@@ -13,7 +13,7 @@ const NO_CHECKOUT_COST = 20.0;
 // out. This situation can be detected by two successive check-in events. In that case the travel cost is 20 euros.
 
 // ASSIGNMENT: Given the personalCheckinsCheckouts$ of check-in and check-out events compute the cumulative travel cost. The resulting
-// stream should emit the total travel cost for every new journey. For this exercise you are not allowed to use the buffer operator.
+// stream should emit the total travel cost for every new journey.
 //
 // HINT: To solve this exercise you will first need to find a method to obtain a stream of two successive gate check-in/out events.
 //
