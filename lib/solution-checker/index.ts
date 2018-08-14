@@ -1,0 +1,1 @@
+export { checkSolution } from './checker';

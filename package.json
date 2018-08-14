@@ -1,0 +1,35 @@
+{
+  "name": "rxjs-workshop",
+  "version": "1.0.0",
+  "description": "Reactive Programming Workshop with RxJS 6",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node --no-cache lib/run-exercise.ts",
+    "test": "ts-node lib/test.ts",
+    "lint": "tslint -p tsconfig.json -t stylish -c tslint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://dscheerens@bitbucket.org/dscheerens/rxjs-workshop.git"
+  },
+  "keywords": [
+    "reactive"
+  ],
+  "author": "Daan Scheerens",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/dscheerens/rxjs-workshop#readme",
+  "dependencies": {
+    "@dscheerens/tslint-presets": "^1.0.0",
+    "@types/lodash": "^4.14.116",
+    "@types/node": "^8.10.12",
+    "@types/yargs": "^11.1.1",
+    "chalk": "^2.4.1",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "rxjs": "^6.2.2",
+    "ts-node": "^7.0.1",
+    "tslint-language-service": "^0.9.9",
+    "typescript": "^2.9.2",
+    "yargs": "^11.1.0"
+  }
+}
