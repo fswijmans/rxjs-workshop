@@ -13,7 +13,7 @@ The sheets of this presentation will be added here to this repository on the day
   **version 8 or higher is required.**
   You can download the latest version from: [https://nodejs.org/en/download/](https://nodejs.org/en/download/).
   To verify whether Node.js was installed correctly and which version you have running, execute the following command from a console:
-  ```
+  ```sh
   node -v
   ```
 
@@ -24,12 +24,12 @@ The sheets of this presentation will be added here to this repository on the day
 * Additionally you need to install the NPM dependencies for the workshop.
   To do so open a console and navigate to the workshop directory.
   From this directory execute the following command:
-  ```
+  ```sh
   npm install
   ```
 
 * Finally test whether everything has been installed correctly and whether you can run the workshop by running the following command:
-  ```
+  ```sh
   npm test
   ```
 
@@ -41,7 +41,7 @@ The exercises can be found in the `exercises` directory of the workshop.
 Just open the first exercise and follow the instructions in the comments.
 When you wish to test your solution for an exercise, run the following command:
 
-```
+```sh
 npm start <exercise number>
 ```
 

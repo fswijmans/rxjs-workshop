@@ -6,7 +6,12 @@
   "scripts": {
     "start": "ts-node --no-cache lib/run-exercise.ts",
     "test": "ts-node lib/test.ts",
-    "lint": "tslint -p tsconfig.json -t stylish -c tslint.json"
+    "lint": "tslint -p tsconfig.json -t stylish -c tslint.json",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "devstart": "webpack-dev-server",
+    "server": "node ./api/server.js",
+    "demo": "concurrently 'npm run server' 'npm run devstart' --kill-others"
   },
   "repository": {
     "type": "git",
@@ -19,17 +24,35 @@
   "license": "UNLICENSED",
   "homepage": "https://bitbucket.org/dscheerens/rxjs-workshop#readme",
   "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
     "@dscheerens/tslint-presets": "^1.0.0",
+    "@polymer/polymer": "^3.2.0",
+    "@types/eventsource": "^1.1.0",
     "@types/lodash": "^4.14.116",
     "@types/node": "^8.10.12",
+    "@types/webpack-env": "^1.13.9",
     "@types/yargs": "^11.1.1",
+    "babel-loader": "^8.0.6",
     "chalk": "^2.4.1",
+    "chartjs": "^0.3.24",
+    "chartjs-web-components": "^2.7.1",
+    "concurrently": "^4.1.0",
+    "eventsource": "^1.0.7",
+    "highcharts-chart": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "lit-element": "^2.2.0",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "rxjs": "^6.2.2",
     "ts-node": "^7.0.1",
     "tslint-language-service": "^0.9.9",
     "typescript": "^2.9.2",
+    "webpack": "^4.34.0",
+    "webpack-cli": "^3.3.4",
+    "webpack-dev-server": "^3.7.2",
     "yargs": "^11.1.0"
   }
 }

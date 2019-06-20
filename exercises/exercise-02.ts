@@ -2,7 +2,7 @@ import { numbersAndAnError$ } from '../lib/example-streams';
 
 // ASSIGNMENT: Subscribe to the numbersAndAnError$ stream and log each event (next, error, complete) to the console.
 
-/// numbersAndAnError$.???
+ numbersAndAnError$.subscribe(console.log);
 
 // If you have completed the assignment successfully you should see the an output that is similar to:
 //
