@@ -1,2 +1,2 @@
-import '../node_modules/highcharts-chart/highcharts-chart.js'
+import 'highcharts-chart'
 import './components/my-currency-chart.js'

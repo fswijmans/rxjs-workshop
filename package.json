@@ -9,7 +9,7 @@
     "lint": "tslint -p tsconfig.json -t stylish -c tslint.json",
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "devstart": "webpack-dev-server",
+    "devstart": "webpack-dev-server --open",
     "server": "node ./api/server.js",
     "demo": "concurrently 'npm run server' 'npm run devstart' --kill-others"
   },
