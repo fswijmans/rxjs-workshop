@@ -1,7 +1,7 @@
 {
-  "name": "rxjs-workshop",
+  "name": "rxjs-workshop-demo",
   "version": "1.0.0",
-  "description": "Reactive Programming Workshop with RxJS 6",
+  "description": "RxJS Workshop demonstration",
   "main": "index.js",
   "scripts": {
     "start": "ts-node --no-cache lib/run-exercise.ts",
@@ -13,16 +13,11 @@
     "server": "node ./api/server.js",
     "demo": "concurrently 'npm run server' 'npm run devstart' --kill-others"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://dscheerens@bitbucket.org/dscheerens/rxjs-workshop.git"
-  },
   "keywords": [
     "reactive"
   ],
-  "author": "Daan Scheerens",
+  "author": "Frank Wijmans",
   "license": "UNLICENSED",
-  "homepage": "https://bitbucket.org/dscheerens/rxjs-workshop#readme",
   "dependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",

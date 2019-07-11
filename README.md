@@ -1,4 +1,4 @@
-# Workshop RxJS - Meetup
+# Workshop RxJS Demo
 
 On the 10th of July, 2019, we organized a workshop together with craftmen. You can find the details [here](https://www.meetup.com/Amsterdam-Web-Components-Meetup/events/262381300/)
 
