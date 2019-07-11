@@ -53,4 +53,9 @@ exports._currencies = [{
         iso: 'RMB',
         continent: 'Asia',
     },
+    {
+        name: 'Hong Kong Dollar',
+        iso: 'HKD',
+        continent: 'Asia',
+    },
 ];

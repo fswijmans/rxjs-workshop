@@ -1,9 +1,26 @@
-import { Subject, concat, interval, merge, of, zip } from 'rxjs';
-import { bufferCount, debounceTime, distinctUntilChanged, filter, map, mapTo, max, publishReplay, refCount, skip, startWith, take, withLatestFrom } from 'rxjs/operators'; // tslint:disable-line:max-line-length
-import { reduce, scan } from '../lib/patched-rxjs-operators';
-import { checkSolution } from '../lib/solution-checker/index';
+import { Subject, concat, interval, merge, of, zip } from "rxjs";
+import {
+    bufferCount,
+    debounceTime,
+    distinctUntilChanged,
+    filter,
+    map,
+    mapTo,
+    max,
+    publishReplay,
+    refCount,
+    skip,
+    startWith,
+    take,
+    withLatestFrom,
+    debounce
+} from "rxjs/operators"; // tslint:disable-line:max-line-length
+import { reduce, scan } from "../lib/patched-rxjs-operators";
+import { checkSolution } from "../lib/solution-checker/index";
 
-const EMIT_DELAY = 250; // milliseconds
+import { sampled } from "./../lib/stream-utils";
+
+const EMIT_DELAY: number = 250; // milliseconds
 
 // ASSIGNMENT: Create a number$ observable stream that emits a number every 0.25 seconds. The numbers that are to be emitted by this
 // stream should start with 1 and each subsequent number should be twice as much as the number that was previously emitted.
@@ -16,7 +33,23 @@ const EMIT_DELAY = 250; // milliseconds
 // HINT: Use the Math.pow function to generate the correct output. With this function the equivalent of the sequence above is written as:
 // Math.pow(2, 0), Math.pow(2, 1), Math.pow(2, 2), Math.pow(2, 3), Math.pow(2, 4), ...
 
-const number$ = null; // ???
+const number$ = sampled(
+    EMIT_DELAY,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+).pipe(map(x => Math.pow(2, x))); // ???
 
 // When implemented correctly you should see the following output:
 // 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024

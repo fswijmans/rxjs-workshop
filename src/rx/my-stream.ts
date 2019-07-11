@@ -1,5 +1,5 @@
 import { currencies$ } from "./currency-streams.ts";
-import { pipe, timer, merge, combineLatest, zip } from "rxjs";
+import { timer } from "rxjs";
 import { filter, scan, map, withLatestFrom } from "rxjs/operators";
 
 const fOnAsianContent = ({ continent }: any) => {
@@ -20,16 +20,12 @@ const aggregateNamedCurrencies$ = currencies$
             o[x.iso] = x;
             o.currencies = [x.iso];
             return o;
-        })
-    )
-    .pipe(
+        }),
         scan((acc: any, cur: any) => {
             let o = Object.assign({}, acc, cur);
             o.currencies = arrayUnique(acc.currencies.concat(cur.currencies));
             return o;
-        })
-    )
-    .pipe(
+        }),
         map((x: any) => {
             let a: any = [];
             x.currencies.forEach((it: any) => {
@@ -43,9 +39,10 @@ const aggregateNamedCurrencies$ = currencies$
  * The ticketCurrencies stream brings a steady pace to the aggregateNamedCurrencies, by using a timer.
  * Also, after taking latest from the timer and currency values, we drop the ticks.
  */
-export const tickedCurrencies$ = timer(500, 500)
-    .pipe(withLatestFrom(aggregateNamedCurrencies$))
-    .pipe(map(x => x[1]));
+export const tickedCurrencies$ = timer(0, 200).pipe(
+    withLatestFrom(aggregateNamedCurrencies$),
+    map(x => x[1])
+);
 
 /**
  * Helper function to make an array unique

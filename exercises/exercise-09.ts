@@ -1,8 +1,22 @@
-import { Subject, concat, interval, merge, of, zip } from 'rxjs';
-import { bufferCount, debounceTime, distinctUntilChanged, filter, map, mapTo, max, publishReplay, refCount, skip, startWith, take, withLatestFrom } from 'rxjs/operators'; // tslint:disable-line:max-line-length
-import { reduce, scan } from '../lib/patched-rxjs-operators';
-import { shape$ } from '../lib/example-streams';
-import { checkSolution } from '../lib/solution-checker/index';
+import { Subject, concat, interval, merge, of, zip } from "rxjs";
+import {
+    bufferCount,
+    debounceTime,
+    distinctUntilChanged,
+    filter,
+    map,
+    mapTo,
+    max,
+    publishReplay,
+    refCount,
+    skip,
+    startWith,
+    take,
+    withLatestFrom
+} from "rxjs/operators"; // tslint:disable-line:max-line-length
+import { reduce, scan } from "../lib/patched-rxjs-operators";
+import { shape$ } from "../lib/example-streams";
+import { checkSolution } from "../lib/solution-checker/index";
 
 // ASSIGNMENT: Use the reduce operator to find the shape that has the largest surface area.
 //
@@ -12,7 +26,11 @@ import { checkSolution } from '../lib/solution-checker/index';
 // HINT: Reduce does not emit intermediate results, it may therefore take some time before the result is available and printed to the
 // console.
 
-const largestShape$ = shape$; // ???
+const largestShape$ = shape$.pipe(
+    reduce((acc, cur) => {
+        return acc.area > cur.area ? acc : cur;
+    })
+); // ???
 
 // If implemented correctly, only one line is printed to console:
 //   Circle 40: 5026.55

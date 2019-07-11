@@ -13,7 +13,8 @@ class MyCurrencyChart extends LitElement {
         return {
             lastEvent: Array,
             data: Array,
-            series: Array
+            series: Array,
+            valuta: Array,
         }
     }
 
@@ -37,8 +38,6 @@ class MyCurrencyChart extends LitElement {
         tickedCurrencies$.subscribe((x) => {
             let chart = this.shadowRoot.getElementById('chart');
             let pie = this.shadowRoot.getElementById('pie');
-
-
             /**
              * Update the line chart
              */
@@ -113,15 +112,17 @@ class MyCurrencyChart extends LitElement {
                 <h2>Current</h2>
                 <table>
                     <tr>
+                        <td>Filter</td>
                         <td>Iso</td>
                         <td>Value</td>
                         <td>Date</td>
                         <td>Name</td>
                         <td>Continent</td>
                     </tr>
-                    ${ this.lastEvent.map((d,i) => { return html `
+                    ${ this.lastEvent.map(d => { return html `
                         <tr>
-                            <td>${d.iso}</td>
+                            <td><input id="${d.iso}checkbox" checked="checked" type="checkbox" value="${d.iso}"></td>
+                            <td><label for="${d.iso}checkbox">${d.iso}</label></td>
                             <td>${d.value}</td>
                             <td>${this.formatDate(d.date)}</td>
                             <td>${d.name}</td>
@@ -138,6 +139,7 @@ class MyCurrencyChart extends LitElement {
     initProperties() {
         this.lastEvent = [];
         this.series = [];
+        this.valuta = [];
     }
 }
 
